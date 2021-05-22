@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main>
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-4 mx-auto" style="margin-bottom: -100px">
+                <h1 class="fw-light">Наши данные:</h1>
+                <p class="lead text-muted">Адрес: г. Москва ул. Несуществующая д. 1 <br> Телефон: +79000000000 <br> График работы: <br> ПН - ПТ: с 7:00 до 20:00 <br> СБ: с 7:00 до 18:00 <br> ВС: с 7:00 до 15:00 </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-2">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="http://baikal-news.net/img/20190123/5bd4a76d1ab332ba820616275dfe786b.jpg" height="165">
+
+                        <div class="card-body">
+                            <p class="card-text">Вы можете вызвать врача на дом. <br><br> </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Подробнее</font></font></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://comingsoon.ae/wp-content/uploads/2020/09/1d868041707bd4dca8cfce5d867ce6105d1c45de.jpeg" height="165">
+
+                        <div class="card-body">
+                            <p class="card-text">Вы можете сдать тест на COVID-19 (обнаружение РНК методом ПЦР).<br></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://t4.ftcdn.net/jpg/02/73/94/89/240_F_273948912_LiJfWzLAbYbJXxeKBXiXOYN0jvzSnUfy.jpg" height="165">
+
+                        <div class="card-body">
+                            <p class="card-text">Бесплатная консультация с врачом по телефону.<br><br></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Телефон: +79000000000</font></font></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src ="https://static.tildacdn.com/tild3062-3231-4739-a438-613234613831/4081848.jpg" height="165">
+
+                        <div class="card-body">
+                            <p class="card-text">В нашей поликлинике вы можете сдать более 300 видов анализов!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Подробнее</font></font></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:insert="blocks/footer :: footer"></div>
+</main>
+</body>
+</html>
