@@ -7,9 +7,31 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<div class="container mt-5">
-  <h1>Выберите нужного врача для записи:</h1>
+<div class="container mt-5 mb-5">
+  <br>
+  <h1>Заполните форму для записи к врачу:</h1>
+  <form action="/appointment" method="post">
+    <br>Выберите доктора:<br>
+    <input type="radio" name="doctor" style="margin-right: 8px" value="Терапевт">Терапевт <br>
+    <input type="radio" name="doctor" style="margin-right: 8px" value="Офтальмолог">Офтальмолог <br><br>
+    Выберите дату посещения:<br>
+    <input type="date" name="date" min="2021-06-01" max="2021-06-30" /><br><br>
+    Выберите желаемое время посещения:<br>
+    <input type="time" list="stime" name="time" /><br><br>
+    <datalist id="stime">
+      <option value="07:00">
+      <option value="07:30">
+      <option value="08:00">
+      <option value="08:30">
+      <option value="09:00">
+    </datalist>
+    Введите ваш номер телефона:<br>
+    <input type="tel" name="telephone" placeholder="9000000000"><br>
+    (в течении 5 минут после отправки с вами свяжутся для уточнения записи).<br><br>
+    <button type="submit" class="btn btn-success">Записаться</button>
+  </form>
 </div>
+
 <div th:insert="blocks/footer :: footer"></div>
 </body>
 </html>
