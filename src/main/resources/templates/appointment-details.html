@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Записи</title>
+  <title>Запись</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 </head>
@@ -42,15 +42,16 @@
 
 <div class="container mt-5">
   <br>
-  <h1>Список записей:</h1>
+  Редактирование записи
 </div>
 
-<div th:each="el : ${appointments}" class="alert alert-info mt-2">
+<div th:each="el : ${appointment}" class="alert alert-info mt-2">
   <b style="font-size: 20px">Специалист:&nbsp;</b><b th:text = "${el.doctor}" style="font-size: 20px"></b><br>
   <b style="font-size: 20px">Дата:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.date}" style="font-size: 20px"></b><b>&nbsp;&nbsp;</b><b th:text = "${el.time}" style="font-size: 20px"></b><br>
   <b style="font-size: 20px">Пациент:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.telephone}" style="font-size: 20px"></b><br>
   <b style="font-size: 20px">Статус:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.status}" style="font-size: 20px"></b><b>&nbsp;&nbsp;</b>
-  <a th:href="'/view/' + ${el.id}" class="btn btn-warning">Редактировать</a>
+  <a th:href="'/view/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a>
+  <a th:href="'/view/' + ${el.id} + '/delete'" class="btn btn-danger">Удалить</a>
 </div>
 
 <div th:insert="blocks/footer :: footer"></div>

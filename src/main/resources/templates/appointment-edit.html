@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Запись к врачу</title>
+  <title>Редактирование записи</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 </head>
@@ -9,15 +9,16 @@
 <header th:insert="blocks/header :: header"></header>
 <div class="container mt-5 mb-5">
   <br>
-  <h1>Заполните форму для записи к врачу:</h1>
-  <form th:action="@{/appointment}" method="post">
+  <h1>Отредактируйте форму для записи к врачу:</h1>
+  <div th:each="el : ${appointment}">
+  <form method="post">
     <br>Выберите доктора:<br>
-    <input type="radio" name="doctor" style="margin-right: 8px" value="Терапевт">Терапевт <br>
-    <input type="radio" name="doctor" style="margin-right: 8px" value="Офтальмолог">Офтальмолог <br><br>
+    <input type="text" name="doctor" style="margin-right: 8px" th:value="${el.doctor}"> <br><br>
+
     Выберите дату посещения:<br>
-    <input type="date" name="date" min="2021-06-01" max="2021-06-30" /><br><br>
+    <input type="date" th:value="${el.date}" name="date" min="2021-06-01" max="2021-06-30" /><br><br>
     Выберите желаемое время посещения:<br>
-    <input type="time" list="stime" name="time" /><br><br>
+    <input type="time" th:value="${el.time}" list="stime" name="time" /><br><br>
     <datalist id="stime">
       <option value="07:00">
       <option value="07:30">
@@ -26,11 +27,12 @@
       <option value="09:00">
     </datalist>
     Введите ваш номер телефона:<br>
-    <input type="tel" name="telephone" placeholder="9000000000"><br>
+    <input type="tel" name="telephone" th:value="${el.telephone}" placeholder="9000000000"><br>
     (в течении 5 минут после отправки с вами свяжутся для уточнения записи).<br>
-    <input type="hidden" name="status" value="Заявка получена"><br><br>
-    <button type="submit" class="btn btn-success">Записаться</button>
+    <input type="text" name="status" th:value="${el.status}"><br><br>
+    <button type="submit" class="btn btn-success">Обновить</button>
   </form>
+  </div>
 </div>
 
 <div th:insert="blocks/footer :: footer"></div>
