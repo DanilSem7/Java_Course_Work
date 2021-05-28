@@ -6,7 +6,39 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-<header th:insert="blocks/header :: header"></header>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Платная поликлиника</a>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/" style="padding-left: 10px">  Главная  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/doctors" style="padding-left: 20px">  Врачи  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services" style="padding-left: 20px">  Услуги  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reviews" style="padding-left: 20px">  Отзывы  </a>
+        </li>
+      </ul>
+      <div style="width: 20px"></div>
+      <form class="d-flex">
+        <button class="btn btn-outline-success" type="submit"> <a href="/appointment" style="text-decoration: none; color: #fff;">Записаться к врачу</a>  </button>
+      </form>
+      <div style="width: 20px"></div>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="http://www.tisarajevo.ba/wp-content/uploads/2019/02/user-512-370x370.png" width="20" height="20" alt="icon">
+      <b style="color: cornflowerblue">&nbsp;&nbsp;[[${#httpServletRequest.remoteUser}]]&nbsp;&nbsp;&nbsp;</b>
+      <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Выйти" class="btn btn-danger"/>
+      </form>
+    </div>
+  </div>
+</nav>
 <div class="container mt-5 mb-5">
   <br>
   <h1>Отредактируйте форму для записи к врачу:</h1>

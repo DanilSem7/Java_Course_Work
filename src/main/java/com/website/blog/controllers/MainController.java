@@ -25,9 +25,9 @@ public class MainController {
         return "services";
     }
 
-    @GetMapping("/reviews")
+    @GetMapping("/vaccination")
     public String reviews(Model model) {
-        model.addAttribute("title", "Отзывы");
-        return "reviews";
+        model.addAttribute("title", "Вакцинация");
+        return "vaccination";
     }
 }

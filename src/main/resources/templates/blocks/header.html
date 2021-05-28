@@ -1,7 +1,7 @@
 <div th:fragment = "header">
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Платная поликлиника</a>
+        <a class="navbar-brand" href="/">Платная поликлиника</a>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -15,7 +15,7 @@
                     <a class="nav-link" href="/services" style="padding-left: 20px">  Услуги  </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/reviews" style="padding-left: 20px">  Отзывы  </a>
+                    <a class="nav-link" href="/vaccination" style="padding-left: 20px">  Вакцинация  </a>
                 </li>
             </ul>
             <div style="width: 20px"></div>
@@ -24,7 +24,7 @@
             </form>
             <div style="width: 20px"></div>
             <img src="http://www.tisarajevo.ba/wp-content/uploads/2019/02/user-512-370x370.png" width="20" height="20" alt="icon">
-            <div style=""><a class="nav-link" href="/view" > Личный кабинет сотрудника [[${#httpServletRequest.remoteUser}]] </a></div>
+            <div><a class="nav-link" href="/view" > Личный кабинет сотрудника [[${#httpServletRequest.remoteUser}]] </a></div>
         </div>
     </div>
 </nav>

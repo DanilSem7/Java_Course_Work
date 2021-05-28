@@ -13,7 +13,8 @@
   <form th:action="@{/appointment}" method="post">
     <br>Выберите доктора:<br>
     <input type="radio" name="doctor" style="margin-right: 8px" value="Терапевт">Терапевт <br>
-    <input type="radio" name="doctor" style="margin-right: 8px" value="Офтальмолог">Офтальмолог <br><br>
+    <input type="radio" name="doctor" style="margin-right: 8px" value="Офтальмолог">Офтальмолог <br>
+    <input type="radio" name="doctor" style="margin-right: 8px" value="Отоларинголог">Отоларинголог <br><br>
     Выберите дату посещения:<br>
     <input type="date" name="date" min="2021-06-01" max="2021-06-30" /><br><br>
     Выберите желаемое время посещения:<br>
@@ -24,9 +25,13 @@
       <option value="08:00">
       <option value="08:30">
       <option value="09:00">
+      <option value="09:30">
+      <option value="10:00">
+      <option value="10:30">
+      <option value="11:00">
     </datalist>
     Введите ваш номер телефона:<br>
-    <input type="tel" name="telephone" placeholder="9000000000"><br>
+    <input type="tel" name="telephone" placeholder="9000000000" required><br>
     (в течении 5 минут после отправки с вами свяжутся для уточнения записи).<br>
     <input type="hidden" name="status" value="Заявка получена"><br><br>
     <button type="submit" class="btn btn-success">Записаться</button>
