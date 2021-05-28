@@ -74,6 +74,13 @@ public class AppointmentController {
         appointment.setTelephone(telephone);
         appointment.setStatus(status);
         appointmentRepository.save(appointment);
-        return "redirect:/";
+        return "redirect:/view";
+    }
+
+    @PostMapping("/view/{id}/delete")
+    public String appointmentDelete(@PathVariable(value = "id") long id, Model model) {
+        appointment appointment = appointmentRepository.findById(id).orElseThrow();
+        appointmentRepository.delete(appointment);
+        return "redirect:/view";
     }
 }
