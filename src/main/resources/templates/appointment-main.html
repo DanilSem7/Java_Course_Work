@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <title>Запись к врачу</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -12,7 +12,7 @@
   <h1>Заполните форму для записи к врачу:</h1>
   <form th:action="@{/appointment}" method="post">
     <br>Выберите доктора:<br>
-    <input type="radio" name="doctor" style="margin-right: 8px" value="Терапевт">Терапевт <br>
+    <input type="radio" name="doctor" style="margin-right: 8px" value="Терапевт">Терапевт<br>
     <input type="radio" name="doctor" style="margin-right: 8px" value="Офтальмолог">Офтальмолог <br>
     <input type="radio" name="doctor" style="margin-right: 8px" value="Отоларинголог">Отоларинголог <br><br>
     Выберите дату посещения:<br>
