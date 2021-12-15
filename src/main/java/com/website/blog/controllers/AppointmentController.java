@@ -1,8 +1,10 @@
 package com.website.blog.controllers;
 
+import com.website.blog.domain.User;
 import com.website.blog.models.appointment;
 import com.website.blog.repo.appointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,9 +34,10 @@ public class AppointmentController {
     }
 
     @PostMapping("/appointment")
-    public String addedAppointment(@RequestParam String date, @RequestParam String doctor, @RequestParam String time,
+    public String addedAppointment(@AuthenticationPrincipal User user, @RequestParam String date,
+                                   @RequestParam String doctor, @RequestParam String time,
                                    @RequestParam String telephone, @RequestParam String status, Model model) {
-        appointment appointment = new appointment(date, doctor, time, telephone, status);
+        appointment appointment = new appointment(date, doctor, time, telephone, status, user);
         appointmentRepository.save(appointment);
         return "redirect:/";
     }

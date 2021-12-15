@@ -16,7 +16,7 @@
     <input type="radio" name="doctor" style="margin-right: 8px" value="Офтальмолог">Офтальмолог <br>
     <input type="radio" name="doctor" style="margin-right: 8px" value="Отоларинголог">Отоларинголог <br><br>
     Выберите дату посещения:<br>
-    <input type="date" name="date" min="2021-06-01" max="2021-06-30" /><br><br>
+    <input type="date" name="date" min="2021-12-01" max="2021-12-31" /><br><br>
     Выберите желаемое время посещения:<br>
     <input type="time" list="stime" name="time" /><br><br>
     <datalist id="stime">
@@ -34,6 +34,7 @@
     <input type="tel" name="telephone" placeholder="9000000000" required><br>
     (в течении 5 минут после отправки с вами свяжутся для уточнения записи).<br>
     <input type="hidden" name="status" value="Заявка получена"><br><br>
+    <input type="hidden" name="author"><br><br>
     <button type="submit" class="btn btn-success">Записаться</button>
   </form>
 </div>

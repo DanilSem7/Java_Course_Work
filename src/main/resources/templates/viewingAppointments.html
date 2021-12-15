@@ -22,7 +22,7 @@
           <a class="nav-link" href="/services" style="padding-left: 20px">  Услуги  </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/reviews" style="padding-left: 20px">  Отзывы  </a>
+          <a class="nav-link" href="/vaccination" style="padding-left: 20px">  Вакцинация  </a>
         </li>
       </ul>
       <div style="width: 20px"></div>
@@ -49,7 +49,8 @@
   <b style="font-size: 20px">Специалист:&nbsp;</b><b th:text = "${el.doctor}" style="font-size: 20px"></b><br>
   <b style="font-size: 20px">Дата:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.date}" style="font-size: 20px"></b><b>&nbsp;&nbsp;</b><b th:text = "${el.time}" style="font-size: 20px"></b><br>
   <b style="font-size: 20px">Пациент:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.telephone}" style="font-size: 20px"></b><br>
-  <b style="font-size: 20px">Статус:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.status}" style="font-size: 20px"></b><b>&nbsp;&nbsp;</b>
+  <b style="font-size: 20px">Статус:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><b th:text = "${el.status}" style="font-size: 20px"></b><br>
+  <b style="font-size: 20px">ID клиента:&nbsp;&nbsp;</b><b th:text = "${el.authorName}" style="font-size: 20px"></b><b>&nbsp;&nbsp;</b>
   <a th:href="'/view/' + ${el.id}" class="btn btn-warning">Редактировать</a>
 </div>
 
